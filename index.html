@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kesepakatan Tim Milestone 1 — Nimonspedia</title>
+<style>
+  :root{
+    /* Tokopedia-ish palette */
+    --primary: #03AC0E;      /* Tokopedia Green */
+    --primary-strong:#02910C;/* darker hover */
+    --soft: #E6FAE8;         /* soft green bg */
+    --accent: #1A1A1A;       /* dark text */
+    --muted: #555555;        /* secondary text */
+    --border:#E5E7EB;        /* gray-200 */
+    --card:#FFFFFF;
+    --bg:#F6FFFA;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--accent);
+    margin:0; padding:32px;
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:980px; margin:auto;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+    overflow:hidden;
+  }
+  header{
+    padding:28px 28px 14px;
+    background: linear-gradient(0deg, #fff 0%, var(--soft) 100%);
+    border-bottom:1px solid var(--border);
+  }
+  h1{
+    margin:0 0 6px 0; font-size:28px; font-weight:800; color:var(--primary);
+  }
+  .sub{color:var(--muted); font-size:14px}
+  section{padding:24px 28px; border-top:1px solid var(--border)}
+  h2{font-size:20px; color:var(--primary); margin:0 0 10px 0}
+  h3{font-size:16px; margin:16px 0 8px}
+
+  /* cards */
+  .grid{display:grid; gap:14px}
+  .col-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+  .card{
+    border:1px solid var(--border);
+    border-radius:10px; background:#fff; padding:14px;
+  }
+  ul{margin:8px 0 0 16px}
+  code{background:#f7f7f7; padding:2px 6px; border-radius:6px; border:1px solid var(--border)}
+  pre{
+    background:#0b1020; color:#eaf2ff; padding:14px; border-radius:10px;
+    overflow:auto; border:1px solid #0d1a33;
+  }
+  .note{
+    background:var(--soft); border-left:6px solid var(--primary);
+    padding:12px 14px; border-radius:10px; font-size:14px;
+  }
+
+  /* color swatches */
+  .swatches{display:grid; grid-template-columns:repeat(5, 1fr); gap:10px}
+  .sw{border:1px solid var(--border); border-radius:10px; overflow:hidden}
+  .sw .box{height:70px}
+  .sw .meta{padding:10px; font-size:12px}
+
+  .sw--primary .box{background:var(--primary)}
+  .sw--primary-strong .box{background:var(--primary-strong)}
+  .sw--soft .box{background:var(--soft)}
+  .sw--accent .box{background:var(--accent)}
+  .sw--muted .box{background:var(--muted)}
+
+  footer{padding:22px; text-align:center; color:var(--muted); font-size:13px}
+
+  /* responsive */
+  @media (max-width:900px){ .col-3{grid-template-columns:1fr} .swatches{grid-template-columns:repeat(2,1fr)} body{padding:16px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Kesepakatan Tim Milestone 1</h1>
+    <div class="sub">Nimonspedia • struktur kerja, token session, dan style warna</div>
+  </header>
+
+  <!-- TEAM ROLES -->
+  <section>
+    <h2>Pembagian Tugas</h2>
+    <div class="grid col-3">
+      <div class="card">
+        <h3>👤 Anggota 1</h3>
+        <ul>
+          <li>Autentikasi Buyer & Seller</li>
+          <li>Register, Login, Logout</li>
+          <li>Password hash + validasi</li>
+          <li>Profile Page (Buyer & Seller)</li>
+        </ul>
+        <p class="note">Frontend: form + UI profile • Backend: session handling, update profil</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Anggota 2</h3>
+        <ul>
+          <li>Product Discovery / Home Buyer</li>
+          <li>Detail Produk</li>
+          <li>Shopping Cart (UI + logic)</li>
+        </ul>
+        <p class="note">Frontend: grid produk, cart UI • Backend: query produk (filter, pagination), tambah/edit/hapus item cart</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ Anggota 3</h3>
+        <ul>
+          <li>Checkout & Order (Buyer)</li>
+          <li>Seller Dashboard</li>
+          <li>Product Management + Order Management</li>
+        </ul>
+        <p class="note">Backend: transaksi, stok, refund, status • Frontend: checkout & dashboard</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR -->
+  <section>
+    <h2>Palette Warna (langsung tampil nyata)</h2>
+    <div class="swatches">
+      <div class="sw sw--primary">
+        <div class="box"></div>
+        <div class="meta"><b>#03AC0E</b><br/>Primary Green</div>
+      </div>
+      <div class="sw sw--primary-strong">
+        <div class="box"></div>
+        <div class="meta"><b>#02910C</b><br/>Primary Hover</div>
+      </div>
+      <div class="sw sw--soft">
+        <div class="box"></div>
+        <div class="meta"><b>#E6FAE8</b><br/>Soft Green</div>
+      </div>
+      <div class="sw sw--accent">
+        <div class="box"></div>
+        <div class="meta"><b>#1A1A1A</b><br/>Text Dark</div>
+      </div>
+      <div class="sw sw--muted">
+        <div class="box"></div>
+        <div class="meta"><b>#555555</b><br/>Text Muted</div>
+      </div>
+    </div>
+    <p style="margin-top:10px" class="note">
+      Pakai <code>--primary</code> untuk tombol dan link utama, <code>--soft</code> untuk background lembut, 
+      <code>--accent</code> untuk judul, dan <code>--muted</code> untuk teks sekunder.
+    </p>
+  </section>
+
+  <!-- SESSION -->
+  <section>
+    <h2>Mekanisme Login, Session, dan Token</h2>
+    <div class="note">
+      <b>1) Setelah login sukses, set session:</b><br/>
+      <code>$_SESSION["user_id"]</code>, <code>$_SESSION["role"]</code>, <code>$_SESSION["csrf_token"] = bin2hex(random_bytes(32));</code><br/><br/>
+      <b>2) Semua form <i>POST</i> wajib menyertakan token:</b><br/>
+      <code>&lt;input type="hidden" name="csrf_token" value="&lt;?= $_SESSION['csrf_token'] ?&gt;"&gt;</code><br/><br/>
+      <b>3) Validasi token di server untuk tiap <i>POST</i>:</b><br/>
+      <code>if (!hash_equals($_SESSION['csrf_token'] ?? '', $_POST['csrf_token'] ?? '')) { http_response_code(403); exit('Invalid token'); }</code><br/><br/>
+      <b>4) Akses halaman by role:</b> guest hanya lihat katalog; buyer yang buka dashboard seller dialihkan ke <code>/home</code>; seller yang buka halaman buyer dialihkan ke <code>/dashboard</code>.
+    </div>
+  </section>
+
+  <!-- FOLDER STRUCTURE -->
+  <section>
+    <h2>Struktur Folder (plus fungsi tiap folder)</h2>
+    <pre>php/src/
+ ├─ index.php          entry point + router sederhana
+ ├─ controllers/       terima request, panggil model, pilih view
+ ├─ models/            query DB, validasi bisnis, helper transaksi
+ ├─ views/             tampilan HTML/PHP yang dirender
+ ├─ public/
+ │   ├─ css/           stylesheet (global.css, page-specific css)
+ │   ├─ js/            script (index.js, cart.js, checkout.js)
+ │   └─ uploads/       file binary: gambar produk & logo toko
+ └─ config/
+     └─ db.php         koneksi database (PDO/mysqli)</pre>
+
+    <h3>Penjelasan ringkas</h3>
+    <ul>
+      <li><b>index.php</b> — gerbang utama aplikasi. Boleh jadi “router” sederhana pakai <code>?page=...</code>. Di sini juga start <code>session_start()</code>.</li>
+      <li><b>controllers/</b> — tempat logika HTTP: baca <code>$_GET/$_POST</code>, cek token, cek role, panggil model, terus render view. Contoh: <code>AuthController.php</code>, <code>ProductController.php</code>.</li>
+      <li><b>models/</b> — semua urusan database. Satu file per entitas: <code>User.php</code>, <code>Product.php</code>, <code>Order.php</code>. Di sini juga ada fungsi transaksi: hold balance, kurangi stok.</li>
+      <li><b>views/</b> — HTML yang dipakai controller buat output. Boleh bikin <code>views/layouts/navbar.php</code> biar reusable.</li>
+      <li><b>public/css</b> — kumpulan CSS. Minimal <code>global.css</code> berisi palette dan komponen dasar. Hindari inline style.</li>
+      <li><b>public/js</b> — file JS per fitur. Contoh: <code>cart.js</code> untuk update quantity via AJAX; <code>checkout.js</code> untuk validasi saldo.</li>
+      <li><b>public/uploads</b> — penyimpanan gambar lokal. Database hanya simpan path, bukan binary.</li>
+      <li><b>config/db.php</b> — satu pintu koneksi DB. Pakai env dari docker-compose kalau perlu.</li>
+    </ul>
+  </section>
+
+  <!-- GIT -->
+  <section>
+    <h2>Git Workflow & Kerja Asinkron</h2>
+    <ul>
+      <li>Kerja di branch: <code>feature/nama-fitur</code></li>
+      <li>PR ke <code>main</code> wajib 1 review cepat</li>
+      <li>Commit kecil dan deskriptif: <code>feat: add checkout validation</code></li>
+      <li>Update DB → edit <code>database/schema.sql</code> dan umumkan di grup</li>
+      <li>Daily check-in 10–15 menit via chat, cukup status singkat</li>
+    </ul>
+  </section>
+
+  <footer>
+    Versi kesepakatan ini bisa ditempel ke README dan discreenshot untuk dokumentasi.
+  </footer>
+
+</div>
+</body>
+</html>
