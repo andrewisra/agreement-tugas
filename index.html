@@ -6,17 +6,18 @@
 <title>Kesepakatan Tim Milestone 1 — Nimonspedia</title>
 <style>
   :root{
-    /* Tokopedia-ish palette */
-    --primary: #03AC0E;      /* Tokopedia Green */
-    --primary-strong:#02910C;/* darker hover */
-    --soft: #E6FAE8;         /* soft green bg */
-    --accent: #1A1A1A;       /* dark text */
-    --muted: #555555;        /* secondary text */
-    --border:#E5E7EB;        /* gray-200 */
+    /* Citrus palette */
+    --primary: #FACC15;        /* Citrus Yellow (utama) */
+    --primary-strong:#FB923C;  /* Tangerine (hover/aktif) */
+    --soft: #FFFBEA;           /* Soft Lemon background */
+    --accent: #1A1A1A;         /* Teks utama */
+    --muted: #555555;          /* Teks sekunder */
+    --border:#E5E7EB;          /* Gray-200 */
     --card:#FFFFFF;
-    --bg:#F6FFFA;
+    --bg:#FFFEF5;              /* Warm bg biar nyatu dengan citrus */
     --radius:12px;
   }
+
   *{box-sizing:border-box}
   body{
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -64,22 +65,30 @@
     padding:12px 14px; border-radius:10px; font-size:14px;
   }
 
-  /* color swatches */
-  .swatches{display:grid; grid-template-columns:repeat(5, 1fr); gap:10px}
-  .sw{border:1px solid var(--border); border-radius:10px; overflow:hidden}
-  .sw .box{height:70px}
-  .sw .meta{padding:10px; font-size:12px}
-
-  .sw--primary .box{background:var(--primary)}
-  .sw--primary-strong .box{background:var(--primary-strong)}
-  .sw--soft .box{background:var(--soft)}
-  .sw--accent .box{background:var(--accent)}
-  .sw--muted .box{background:var(--muted)}
+  /* color swatches (real blocks) */
+  .swatches{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:12px; margin-top:10px;
+  }
+  .swatch{
+    border:1px solid var(--border); border-radius:10px; overflow:hidden;
+  }
+  .swatch .box{
+    height:90px; display:flex; align-items:center; justify-content:center;
+    font-weight:700; letter-spacing:.3px;
+  }
+  .swatch .meta{
+    padding:10px; font-size:12px; color:var(--muted); background:#fff;
+    border-top:1px solid var(--border);
+  }
 
   footer{padding:22px; text-align:center; color:var(--muted); font-size:13px}
 
   /* responsive */
-  @media (max-width:900px){ .col-3{grid-template-columns:1fr} .swatches{grid-template-columns:repeat(2,1fr)} body{padding:16px} }
+  @media (max-width:900px){
+    .col-3{grid-template-columns:1fr}
+    body{padding:16px}
+  }
 </style>
 </head>
 <body>
@@ -87,7 +96,7 @@
 
   <header>
     <h1>Kesepakatan Tim Milestone 1</h1>
-    <div class="sub">Nimonspedia • struktur kerja, token session, dan style warna</div>
+    <div class="sub">Nimonspedia • struktur kerja, token session, dan style warna (citrus)</div>
   </header>
 
   <!-- TEAM ROLES -->
@@ -125,34 +134,44 @@
     </div>
   </section>
 
-  <!-- COLOR -->
+  <!-- COLOR (CITRUS) -->
   <section>
-    <h2>Palette Warna (langsung tampil nyata)</h2>
+    <h2>Palette Warna (Citrus — tampil real)</h2>
+
     <div class="swatches">
-      <div class="sw sw--primary">
-        <div class="box"></div>
-        <div class="meta"><b>#03AC0E</b><br/>Primary Green</div>
+      <!-- Citrus Yellow -->
+      <div class="swatch">
+        <div class="box" style="background:#FACC15; color:#1A1A1A;">#FACC15</div>
+        <div class="meta"><b>Primary — Citrus Yellow</b><br>pakai untuk tombol utama, link utama, highlight judul</div>
       </div>
-      <div class="sw sw--primary-strong">
-        <div class="box"></div>
-        <div class="meta"><b>#02910C</b><br/>Primary Hover</div>
+
+      <!-- Tangerine (Hover/Active) -->
+      <div class="swatch">
+        <div class="box" style="background:#FB923C; color:#1A1A1A;">#FB923C</div>
+        <div class="meta"><b>Active — Tangerine</b><br>hover/active state tombol & badge promosi</div>
       </div>
-      <div class="sw sw--soft">
-        <div class="box"></div>
-        <div class="meta"><b>#E6FAE8</b><br/>Soft Green</div>
+
+      <!-- Soft Lemon Background -->
+      <div class="swatch">
+        <div class="box" style="background:#FFFBEA; color:#1A1A1A;">#FFFBEA</div>
+        <div class="meta"><b>Soft — Lemon BG</b><br>background section, card soft, note/info</div>
       </div>
-      <div class="sw sw--accent">
-        <div class="box"></div>
-        <div class="meta"><b>#1A1A1A</b><br/>Text Dark</div>
+
+      <!-- Text Dark -->
+      <div class="swatch">
+        <div class="box" style="background:#1A1A1A; color:#FFFFFF;">#1A1A1A</div>
+        <div class="meta"><b>Text — Dark</b><br>judul, body text utama (kontras tinggi)</div>
       </div>
-      <div class="sw sw--muted">
-        <div class="box"></div>
-        <div class="meta"><b>#555555</b><br/>Text Muted</div>
+
+      <!-- Text Muted -->
+      <div class="swatch">
+        <div class="box" style="background:#6B7280; color:#FFFFFF;">#6B7280</div>
+        <div class="meta"><b>Text — Muted</b><br>deskripsi sekunder, label kecil, helper text</div>
       </div>
     </div>
-    <p style="margin-top:10px" class="note">
-      Pakai <code>--primary</code> untuk tombol dan link utama, <code>--soft</code> untuk background lembut, 
-      <code>--accent</code> untuk judul, dan <code>--muted</code> untuk teks sekunder.
+
+    <p class="note" style="margin-top:12px">
+      Rekomendasi: gunakan <code>--primary</code> sebagai base tombol, dan saat hover ganti ke <code>--primary-strong</code> untuk feedback visual.
     </p>
   </section>
 
